@@ -16,5 +16,11 @@ namespace TripLog.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        void Save_Clicked(object sender, EventArgs e)
+        {
+            
+        }
+
+    }
 }
