@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TripLog.Views.MainPage"
              Title="Ejw's TripLog">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="New_Clicked" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <CollectionView x:Name="trips" SelectionMode="Single">
             <CollectionView.ItemTemplate>
