@@ -53,5 +53,16 @@ namespace TripLog.Views
         {
             Navigation.PushAsync(new NewEntryPage());
         }
+
+        async void Trips_SelectionChanged(object s, SelectionChangedEventArgs e)
+        {
+            TripLogEntry trip = (TripLogEntry)e.CurrentSelection.FirstOrDefault();
+            if (trip != null)
+            {
+                await Navigation.PushAsync(new DetailPage(trip));
+            }
+            // clear selection
+            trips.SelectedItem = null;
+        }
     }
 }
