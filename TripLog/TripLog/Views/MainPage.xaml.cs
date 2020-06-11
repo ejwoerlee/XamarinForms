@@ -25,7 +25,7 @@ namespace TripLog.Views
                     Rating = 3,
                     Date = new DateTime(2019,2,5),
                     Latitude = 38.8895,
-                    Longitude = -122.4798
+                    Longitude = -77.0373655
                 },
                 new TripLogEntry
                 {
@@ -34,7 +34,7 @@ namespace TripLog.Views
                     Rating = 1,
                     Date = new DateTime(2019,4,13),
                     Latitude = 40.8895,
-                    Longitude = -74.4798
+                    Longitude = -74.0466944
                 },
                 new TripLogEntry
                 {
@@ -42,8 +42,8 @@ namespace TripLog.Views
                     Notes = "Cool!",
                     Rating = 2,
                     Date = new DateTime(2019,4,26),
-                    Latitude = 38.8895,
-                    Longitude = -122.4798
+                    Latitude = 37.8199286,
+                    Longitude = -122.4804491
                 }
             };
             trips.ItemsSource = items;
