@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TripLog.Models;
+using TripLog.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
@@ -16,6 +17,7 @@ namespace TripLog.Views
 		public DetailPage (TripLogEntry entry)
 		{
 			InitializeComponent ();
+            BindingContext = new DetailViewModel(entry);
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(entry.Latitude, entry.Longitude), Distance.FromMiles(.5)));
