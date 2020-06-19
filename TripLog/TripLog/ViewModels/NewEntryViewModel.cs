@@ -76,7 +76,7 @@ namespace TripLog.ViewModels
             }
         }
 
-        bool CanSave() => !String.IsNullOrWhiteSpace(Title;
+        bool CanSave() => !String.IsNullOrWhiteSpace(Title);
 
         private Command _saveCommand;
         public Command SaveCommand => _saveCommand ?? (_saveCommand = new Command(Save, CanSave));

@@ -14,7 +14,7 @@
                     <EntryCell Label="Title" Text="{Binding Title}" />
                     <EntryCell Label="Latitude" Keyboard="Numeric" Text="{Binding Latitude}" />
                     <EntryCell Label="Longitude" Keyboard="Numeric" Text="{Binding Longitude}" />
-                    <EntryCell Label="Date" Text="{Binding Date, StringFormat='{0.d}'}"/>
+                    <EntryCell Label="Date" Text="{Binding Date, StringFormat='{0:d}'}"/>
                     <EntryCell Label="Rating" Keyboard="Numeric" Text="{Binding Rating}"/>
                     <EntryCell Label="Notes" Text="{Binding Notes}"/>
                 </TableSection>
