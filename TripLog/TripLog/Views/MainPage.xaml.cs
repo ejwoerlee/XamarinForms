@@ -21,7 +21,7 @@ namespace TripLog.Views
 
         void New_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewEntryPage());
+            Navigation.PushAsync(new NewEntryPage(), true);
         }
 
         async void Trips_SelectionChanged(object s, SelectionChangedEventArgs e)

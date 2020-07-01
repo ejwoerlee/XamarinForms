@@ -92,6 +92,10 @@ namespace TripLog.ViewModels
             Rating = 1;
         }
 
+        public override void Init()
+        {
+        }
+
         private void Save()
         {
             var newItem = new TripLogEntry

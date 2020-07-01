@@ -16,10 +16,10 @@ namespace TripLog.Views
 	{
         DetailViewModel ViewModel => BindingContext as DetailViewModel;
 
-		public DetailPage (TripLogEntry entry)
+		public DetailPage ()
 		{
 			InitializeComponent ();
-            BindingContext = new DetailViewModel(entry);
+            BindingContext = new DetailViewModel();
 
             map.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(ViewModel.Entry.Latitude, ViewModel.Entry.Longitude), Distance.FromMiles(.5)));
