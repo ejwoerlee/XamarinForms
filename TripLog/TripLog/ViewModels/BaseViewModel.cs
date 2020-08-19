@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using TripLog.Services;
 
 namespace TripLog.ViewModels
 {
@@ -10,6 +11,12 @@ namespace TripLog.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected INavService NavService { get; private set; }
+        
+        protected BaseViewModel(INavService navService)
+        {
+            this.NavService = navService;
+        }
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -20,7 +27,7 @@ namespace TripLog.ViewModels
 
     public class BaseViewModel<TParameter>: BaseViewModel
     {
-        protected BaseViewModel()
+        protected BaseViewModel(INavService navService): base(navService)
         {
         }
 
@@ -32,7 +39,6 @@ namespace TripLog.ViewModels
         public virtual void Init(TParameter parameter)
         {
         }
-        
-        
     }
+    
 }

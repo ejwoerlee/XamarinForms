@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TripLog.Models;
+using TripLog.Services;
 
 namespace TripLog.ViewModels
 {
@@ -19,7 +20,7 @@ namespace TripLog.ViewModels
             }
         }
 
-        public DetailViewModel()
+        public DetailViewModel(INavService navService): base(navService)
         {
         }
 

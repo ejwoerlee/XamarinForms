@@ -9,6 +9,9 @@ using TripLog.Services;
 using TripLog.ViewModels;
 using Xamarin.Forms;
 
+// Mark navigation class as a dependency, so that it
+// can be resolved by the Xamarin.Forms DependencyService
+// This is accomplished by adding the assembly attribute to the class
 [assembly:Dependency(typeof(XamarinFormsNavService))]
 namespace TripLog.Services
 {
@@ -61,7 +64,7 @@ namespace TripLog.Services
             (vm as BaseViewModel)?.Init();
         }
 
-        public async Task Navigate<TVM, TParameter>(TParameter parameter) where TVM : BaseViewModel
+        public async Task NavigateTo<TVM, TParameter>(TParameter parameter) where TVM : BaseViewModel
         {
             await NavigateToView(typeof(TVM));
             var vm = XamarinFormsNav.NavigationStack.Last().BindingContext;
@@ -100,8 +103,8 @@ namespace TripLog.Services
             }
 
             Device.OpenUri(uri);
+            
         }
-        
-        
+
     }
 }

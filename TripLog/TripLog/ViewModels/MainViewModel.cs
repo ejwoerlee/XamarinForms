@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using TripLog.Models;
+using TripLog.Services;
+using Xamarin.Forms;
 
 namespace TripLog.ViewModels
 {
@@ -10,7 +13,10 @@ namespace TripLog.ViewModels
     {
         private ObservableCollection<TripLogEntry> _logEntries;
 
-        private ObservableCollection<TripLogEntry> LogEntries
+        /// <summary>
+        /// Public member, anders niet zichtbaar in de view/page
+        /// </summary>
+        public ObservableCollection<TripLogEntry> LogEntries
         {
             get => _logEntries;
             set
@@ -20,11 +26,28 @@ namespace TripLog.ViewModels
             }
         }
 
-        public MainViewModel()
+        public Command<TripLogEntry> ViewCommand => new Command<TripLogEntry>( async(entry) => await ExecuteViewCommand(entry));
+        public Command NewCommand => new Command(async() => await ExecuteNewCommand());
+        
+        private async Task ExecuteViewCommand(TripLogEntry entry)
+        {
+            if (NavService == null)
+            {
+                return;
+            }
+            await NavService.NavigateTo<DetailViewModel, TripLogEntry>(entry);
+        }
+
+        private async Task ExecuteNewCommand()
+        {
+            await NavService.NavigateTo<NewEntryViewModel>();
+        }
+
+        public MainViewModel(INavService navService): base(navService)
         {
             LogEntries = new ObservableCollection<TripLogEntry>();
         }
-
+        
         public override void Init()
         {
             LoadEntries();
