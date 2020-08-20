@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1145
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLog.Android", ".\TripLog\TripLog.Android\TripLog.Android.csproj", "{F8A6FD03-C963-4C9B-8830-7588965331C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLog.Android", "TripLog\TripLog.Android\TripLog.Android.csproj", "{F8A6FD03-C963-4C9B-8830-7588965331C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLog.iOS", ".\TripLog\TripLog.iOS\TripLog.iOS.csproj", "{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLog.iOS", "TripLog\TripLog.iOS\TripLog.iOS.csproj", "{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLog", ".\TripLog\TripLog\TripLog.csproj", "{27039E5D-EC96-47F1-AA89-1EC1E1029C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripLog", "TripLog\TripLog\TripLog.csproj", "{27039E5D-EC96-47F1-AA89-1EC1E1029C1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,9 +64,13 @@ Global
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Ad-Hoc|Any CPU.ActiveCfg = Ad-Hoc|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhoneSimulator
+		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Ad-Hoc|iPhoneSimulator.Build.0 = Ad-Hoc|iPhoneSimulator
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.AppStore|Any CPU.ActiveCfg = AppStore|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhoneSimulator
+		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.AppStore|iPhoneSimulator.Build.0 = AppStore|iPhoneSimulator
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Debug|Any CPU.ActiveCfg = Debug|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{C3A998F7-4B69-4FB9-9183-B5C2CC4A4482}.Debug|iPhone.Build.0 = Debug|iPhone
