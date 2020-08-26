@@ -73,8 +73,8 @@ namespace TripLog.ViewModels
                     Notes = "INspinring!",
                     Rating = 1,
                     Date = new DateTime(2019, 4, 13),
-                    Latitude = 40.8895,
-                    Longitude = -74.0466944
+                    Latitude = 40.6892,
+                    Longitude = -74.0444
                 });
             LogEntries.Add(new TripLogEntry
                 {
@@ -82,8 +82,8 @@ namespace TripLog.ViewModels
                     Notes = "Cool!",
                     Rating = 2,
                     Date = new DateTime(2019, 4, 26),
-                    Latitude = 37.8199286,
-                    Longitude = -122.4804491
+                    Latitude = 37.8268,
+                    Longitude = -122.4798
                 });
         }
     }
