@@ -10,6 +10,8 @@ namespace TripLog.ViewModels
 {
     public class NewEntryViewModel : BaseValidationViewModel
     {
+        private readonly ILocationService _locService;
+        
         private string _title = String.Empty;
 
         public string Title
@@ -88,14 +90,26 @@ namespace TripLog.ViewModels
 
         // C# 8.x: public Command SaveCommand => _saveCommand ??= new Command(Save, CanSave));
 
-        public NewEntryViewModel(INavService navService): base(navService)
+        public NewEntryViewModel(INavService navService, ILocationService locService): base(navService)
         {
+            _locService = locService;
+            
             Date = DateTime.Today;
             Rating = 1;
         }
 
-        public override void Init()
+        public override async void Init()
         {
+            try
+            {
+                var coords = await _locService.GetGeoCoordinatesAsync();
+                Latitude = coords.Latitude;
+                Longitude = coords.Longitude;
+            }
+            catch (Exception )
+            {
+                //TODO: handle exceptions from location service
+            }
         }
 
         private async Task Save()

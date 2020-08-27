@@ -5,6 +5,10 @@
   <application android:label="TripLog.Android" 
                android:name="android.support.multidex.MultiDexApplication">
       <meta-data android:name="com.google.android.maps.v2.API_KEY"
-                 android:value="" />
+                 android:value="AIzaSyAe_WGnml0W9qZQrS7wpc-wv1_fRBOOzAM" />
   </application>
+  
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">true</uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">true</uses-permission>
+    
 </manifest>

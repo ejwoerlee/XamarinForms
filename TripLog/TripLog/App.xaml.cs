@@ -1,4 +1,7 @@
 ﻿using System;
+using Ninject;
+using Ninject.Modules;
+using TripLog.Modules;
 using TripLog.Services;
 using TripLog.ViewModels;
 using TripLog.Views;
@@ -10,19 +13,33 @@ namespace TripLog
 {
     public partial class App : Application
     {
-        public App()
+        public IKernel Kernel { get; private set; }
+        public App(params INinjectModule[] platformModules)
         {
-            var navService2 = DependencyService.Get<INavService>() as XamarinFormsNavService;
-            
             InitializeComponent();
+           
+            // Register core services
+            Kernel = new StandardKernel(new TripLogCoreModule(), new TripLogNavModule());
+            // Register platform specific services
+            Kernel.Load(platformModules);
+            SetMainPage();
+        }
+
+        private void SetMainPage()
+        {
             // Startpunt xamarin app
-            var mainPage = new NavigationPage(new MainPage());
-            // Dependency injection
-            var navService = DependencyService.Get<INavService>() as XamarinFormsNavService;
+            var mainPage = new NavigationPage(new MainPage())
+            {
+                // Get an instance of the MainViewModel via the IoC container and
+                // use it to set the BindingContext(ViewModel) of the MainPage
+                BindingContext = Kernel.Get<MainViewModel>() 
+            };
+            
+            // Dependency injection via Xamarin.Forms default Injection service -->
+            // var navService = DependencyService.Get<INavService>() as XamarinFormsNavService;
+            
+            var navService = Kernel.Get<INavService>() as XamarinFormsNavService;
             navService.XamarinFormsNav = mainPage.Navigation;
-            navService.RegisterViewMapping(typeof(MainViewModel), typeof(MainPage));
-            navService.RegisterViewMapping(typeof(DetailViewModel), typeof(DetailPage));
-            navService.RegisterViewMapping(typeof(NewEntryViewModel), typeof(NewEntryPage));
             MainPage = mainPage;
         }
 

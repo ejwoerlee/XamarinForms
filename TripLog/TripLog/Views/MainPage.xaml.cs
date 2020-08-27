@@ -26,8 +26,7 @@ namespace TripLog.Views
         public MainPage ()
         {
             InitializeComponent();
-            BindingContext = new MainViewModel(DependencyService.Get<INavService>());            
-		}
+        }
 
 		// async void Trips_SelectionChanged(object s, SelectionChangedEventArgs e)
 
